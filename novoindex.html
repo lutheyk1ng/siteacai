@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilonovo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<section id="maior">    
+
+    <section id="menu">
+        <nav>
+            <img src="./images/Component 1.png" alt="">
+        </nav>
+
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Contato</li>
+                <li>Peça já !!!</li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="jumbo">  
+        
+        <article>
+            <h1>
+                Descubra o <br>Sabor único <br>do Açaí Tropical
+            </h1>
+
+            <button >Saiba mais</button>
+        </article>
+        <article>
+            <img src="./images/IMG-4.png" alt="" width="600px">
+        </article>
+
+    </section>
+    <br>
+
+
+    <!--Carousel de Açai-->
+
+
+    <div class="carrossel" style="position: relative; overflow: hidden; width: 80%; max-width: 400px; margin: 0 auto;">
+        <div class="imagens" style="display: flex; transition: transform 0.5s ease;">
+            <img src="images/Morango-removebg.png" alt="Imagem 1" style="width: 100%; height: auto; flex-shrink: 0;">
+            <img src="images/Original-removebg.png" alt="Imagem 2" style="width: 100%; height: auto; flex-shrink: 0;">
+            <img src="images/file.png" alt="Imagem 3" style="width: 100%; height: auto; flex-shrink: 0;">
+            <img src="images/bananana.png" alt="Imagem 3" style="width: 100%; height: auto; flex-shrink: 0;">
+        </div>
+        <button class="prev" onclick="mudarImagem(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 8px; cursor: pointer; font-size: 18px;">&#10094;</button>
+        <button class="next" onclick="mudarImagem(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 8px; cursor: pointer; font-size: 18px;">&#10095;</button>
+    </div>
+
+<script>
+ let index = 0;
+
+function mudarImagem(direcao) {
+    const imagens = document.querySelector('.imagens');
+    const totalImagens = document.querySelectorAll('.imagens img').length;
+    const titulos = document.querySelectorAll('.titulos p');
+
+    index += direcao;
+
+    if (index < 0) {
+        index = totalImagens - 1;
+    } else if (index >= totalImagens) {
+        index = 0;
+    }
+
+    imagens.style.transform = `translateX(${-index * 100}%)`;
+
+    // Atualizar o título exibido
+    titulos.forEach(titulo => titulo.classList.remove('active'));
+    titulos[index].classList.add('active');
+}
+
+
+// Alteração automática a cada 3 segundos
+setInterval(() => {
+    mudarImagem(1);
+}, 3000);
+
+</script>
+
+
+    
+<div id="Contato" style="background-color:#631760">
+   <img src="./images/Component 2.png" alt="">
+   
+
+
+
+</div>    
+<br>
+
+
+<div id="encontrar" style="background-color:rgb(243, 214, 247); color:black">
+<h1>
+
+   ESTAMOS EM:
+
+</h1>
+
+
+
+
+<section id="ze" style="background-color: rgb(243, 214, 247); color:black">
+
+<article>
+
+    <img src="/images/Component 3.png" alt="" width="800px">
+    
+
+</article>
+
+<article>
+
+    <ul>
+        <li>São Paulo</li>
+        <li>Paraná</li>
+        <li>Bahia</li>
+        <li>Rio de Janeiro  </li>
+    </ul>
+
+</article>
+
+</section>
+
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="logo">
+            <img src="images/acai.png" alt="Açaí Tropical" class="logo-img">
+        </div>
+        <div class="info">
+            <p class="description">O melhor açaí da cidade, com ingredientes frescos e naturais! Viva o sabor tropical!</p>
+            <ul class="social-media">
+                <li><a href="#" class="social-icon">Facebook</a></li>
+                <li><a href="#" class="social-icon">Instagram</a></li>
+                <li><a href="#" class="social-icon">Twitter</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <p><strong>Contato:</strong></p>
+            <p>Telefone: (XX) XXXXX-XXXX</p>
+            <p>Email: acaitropical@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Açaí Tropical. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
+ 
